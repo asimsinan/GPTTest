@@ -1,0 +1,305 @@
+Bölüm-1: Sinir Ağlarına Giriş
+	Bilgisayar ile beyni kabaca karşılaştıracak olursak: Bilgisayar 10-9 saniye anahtarlama süresine sahip 109 transistörden oluşur. Beyin ise 10-3 anahtarlama süresine sahip 1011 nörondan oluşur. Beynin büyük bir bölümü sürekli çalışırken, bilgisayarın büyük bir bölümü pasif veri depolama ile meşguldür. Bilgisayar statiktir. Beyin ise dinamik. Yaşam boyunca kendini yeniden organize edebilir, hataları kompanse edebilir. Beyin paralel işlem yapma kapasitesine sahiptir. Bilgisayar bilgileri adres tabanlı depolarken, beyin bilgileri ilişkisel bir biçimde depolar.
+	Yapay sinir ağlarını tasarlarken biyolojiden adapte ettiğimiz özellikler: Kendi kendine organize olabilme (self-organization), öğrenme beceresi, genelleme becerisi ve hata toleransı
+	Bir insan tanıdık bir nesneyi ya da başka bir insanı 0.1 saniyede tanıyabiliyor. Bu da paralel işlemenin 100 ayrık zaman adımında 10-3 saniyelik nöron anahtarlama süresine eşit. Neumann mimarisine sahip bir bilgisayar 100 ardışık adımda hiçbir şey yapamaz.
+	Sinir ağlarının tarihi 1940’larda programlanabilir elektronik bilgisayarların tarihiyle aynı zamanda başlar.
+	1943’lerde Warren McCulloch ve Walter Pitts sinirsel ağların modellerini tanıttı. İlk elektronik beyin geliştirildi. (Başlangıç)
+	1949’da Donald O. Hebb tüm sinirsel öğrenme prosedürlerinin temelini oluşturan klasik Hebbian kuralını formülleştirdi. Kurala göre iki nöron aynı anda aktifse nöronların arasındaki bağ güçlenir. Birlikte ateşlenen nöronlar, birbirlerine bağlanırlar.
+	1951’de Marvin Minsky Snark adında bir nörobilgisayar geliştirdi. Ağırlıkları otomatik olarak ayarlayabiliyordu. Pratik olarak hayata geçirilmedi. (Altın Çağın Başlangıcı)
+	1957-1958 yıllarında Frank Rosenblatt, Charles Wightman Mark 1 Perceptron ismiyle ilk başarılı nörobilgisayarı geliştirdiler. 20x20 piksel resim sensöründen gelen basit sayıları tanıyabiliyordu.
+	1959’da Frank Rosenblatt perceptron (Tek katmanlı bir yapay sinir ağının temel birimi, Algılayıcı) modelinin değişik versiyonlarını ortaya çıkardı. Perceptron yakınsama teoremini formülleştirdi ve doğruladı. Retinayı taklit eden Nöron katmanlarını tanımladı. Eşik değer anahtarlarını, bağlantılı ağırlıkları ayarlayan öğrenme kuralını tanımladı.
+	1960’da Bernard Widrow and Marcian E. Hoff Adaline ‘ı (Adaptive Linear Neuron) tanıttı. Hızlı ve kesin adaptif öğrenme yeteneğine sahip, ticari olarak geniş bir şekilde kullanılan ilk sinir ağı. Geliştirilen delta kuralına (Widrow-Hoff kuralı) göre eğitim gerçekleşiyor. Widrow modern mikroişlemcilerin mucidi. Hoff Widrow’un doktora öğrencisi daha sonra Intel’in kurucuğu ortağı oldu. Perceptrondan farkı adaptif olması. Çıkış ile gerçek sonuç arasındaki fark çoksa bağlı ağırlıklar da büyük adımlarda değişir. Adımlar küçükse hedef o kadar yakındır. 
+	1969’da Marvin Minsky and Seymour Papert perceptronun birçok önemli problem için (XOR ve lineer ayrım) çözüm sağlayamadığını matematiksel analiz ile ortaya koydular. Daha güçlü modellerin de benzer sonuçlar göstereceğini söylemeleri 15 yıl boyunca araştırma fonlarının kesilmesine ve çalışmaların durmasına neden oldu. 
+	1974’de Harvard Paul Werbos hatanın geri yayılımı (backpropagation of error) adında bir öğrenme prosedürü geliştirdi.
+	1982’de Teuvo Kohonen kendi kendine organize olabilen özellik haritaları /Kohonen Maps (Self organizing feature maps) tanımladı.
+	1985’de John Hopfield gezgin satıcı problemi için çözüm bulan Hopfield net tabanlı bir yol tanımladı. (Rönosans)
+
+Bölüm-2: Biyolojik Sinir Ağları
+
+	Omurgalı sinir sistemi merkezi ve çevresel sinir sistemlerinden oluşmaktadır.
+	Çevresel sinir sistemi beyin ve omurilik haricindeki sinirler ve gangliyondan oluşur. Bu sinirler tüm vücuda yayılmış yoğun dallanmış bir ağ formundadır. ÇSS'nin ana işlevi, merkezi sinir sistemi (MSS) ile organ ve uzuvlar arasındaki iletişimi (bağlantıyı) sağlamaktır.
+	Merkezi sinir sistemi ise omurgalıların mainframe idir. Duyu organlarından gelen bilginin depolandığı ve yönetildiği yerdir. Vücuttaki iç süreçleri yönetir. Beyin ve omurilikten oluşur.
+	Serebrum veya telensefalon, beynin en büyük ve en üst kısmında bulunan merkezi sinir sistemi bölümüdür. Soyut düşünme süreçlerinden sorumludur. Önden arkaya doğru derin bir yarıkla iki yarım küreye ayrılır. Bu yarım küreleri iki köprü birbirine bağlar. Üstteki köprüye nasırlı cisim, alttaki köprüye ise beyin üçgeni denir. Kompleks hareketlerin organizasyonu, öğrenilen deneyimlerin hafızada saklanması, duyusal bilgilerin alınması gibi görevleri vardır.
+	Serebellum (Beyincik) motor fonksiyonları yönetir ve koordine eder. Vücudun denge organlarından biridir. Kasların düzenli çalışmasını sağlar. Kol ve bacaklardaki kasların birbiriyle uyumlu çalışmasını sağlar. Kol ve bacaklardaki kasların çalışma derecesi düzenler. Aktif hareketlerin dengeli olmasını sağlar.
+	Diensefalon; talamus, hipotalamus ve hipofiz arka lobu gibi önemli yapıları barındıran bir beyin parçasıdır. Bunlardan hipotalamus, diğer beyin kısımları ya da otonom sinir sistemi yolu ile iç organ çalışmalarının düzenlenmesi gibi hayati görevler üstlenmiştir. Diensefalon biyolojik saatten ve acı hissinden sorumludur.
+	Beyin sapı beyni omuriliğe bağlar ve refleksleri kontrol eder. Öksürme ve göz kırpma gibi.
+	Nöronlar bilgi işleyen hücrelerdir. Giriş ve çıkıştan oluşan basit bir anahtardır. Diğer nöronlar tarafından girişe yeterli uyarı gelirse anahtar etkinleşir. Daha sonra diğer nöronlara çıkış bilgisi /titreşim gönderilir.
+	Diğer nöronlardan gelen sinyaller sinaps adı verilen özel bir bağlantıyla diğer nöronlara aktarılır. Dentritlerin ucunda bulunur. Kimyasal ve elektriksel olmak üzere ikiye ayrılır.
+	Elektriksel sinaps basit bir biçimdedir. Presinaptik taraftan sinapsa gelen elektriksel sinyal doğrudan hücrenin post sinaptik çekirdeğine iletilir.
+	Kimyasal sinaps daha ayırt edici bir biçimdedir. Elektriksel birleşme sinaptik yarık tarafından engellenir. Bu yarık presinaptik kısım ile postsinaptik kısmı elektriksel olarak birbirinden ayırır. Aslında bilgi akışı elektriksel değil kimyasal bir işlemdir. Sinaptik yarığın presinaptik tarafında elektriksel sinyaller nörotransmiterler tarafından kimyasal sinyallere dönüştürülür. Bu nörotransmiterler sinaptik yarığı geçerek bilgiyi hücre çekirdeğine taşırlar. Burada tekrar elektriksel sinyale dönüşüm yapılır. Kimyasal sinaps tek yönlü bağlantıya sahiptir.
+	Dentritler hücre çekirdeğinden dallanan ağaç şeklinde yapılardır. Çok farklı kaynaklardan gelen elektriksel sinyalleri alarak çekirdeğe iletirler.
+	Hücre çekirdeği/soma dentritlerden yeterince etkinleştirici sinyal aldığında bu sinyalleri biriktirir. Biriken bu sinyaller belli bir eşik değerini geçtiğinde çekirdeğin bulunduğu nörona bağlı olan nörona elektriksel bir titreşim gönderir.
+	Aksonlar bu titreşimi diğer nöronlara iletir. Elektriksel sinyallerin daha iyi iletilmesi için elektriksel olarak izole olmuştur.
+
+ 
+
+	Nöronlar çevrelerine oranla elektriksel yüklerinde farklılıklar gösterirler. Buna potansiyel denir. Nöronun memranında/zarındaki elektriksel yük dışardaki yükten farklıdır. Yükteki bu fark nöronlarda gerçekleşen işlemleri anlamada önemli bir yere sahiptir. Bu farka membran potansiyeli denir. Bu potansiyel çok farklı türlerdeki yüklü atomlar (iyonlar) tarafından oluşturulur. İçerdeki ve dışardaki yük yoğunlukları farklıdır. Membranı içerden dışarı doğru incelediğimizde bazı iyonların dışardan daha az ya da daha fazla olduğunu görebiliriz. Yoğunluktaki/konsantrasyondaki bu azalma veya artmaya konsantrasyon gradyanı denir.
+	Nöron dinlenme durumundayken dışardan herhangi bir elektriksel sinyal gelmez. Bu durumda membran potansiyeli -70mV’dir. Konsantrasyon gradyanındaki değişim difüzyonla olur. Bu olduğunda membran potansiyeli 0mv’ye doğru ilerler ve membran potansiyeli ortadan kalkar. Nöron bilgiyi işlemek için aktif olarak membran potansiyelini korumaya çalışır. Korumak için çeşitli yollar devreye girer: konsantrasyon gradyanı ve elektriksel gradyan
+	Konsantrasyon gradyanı: Nöronun içindeki iyon yoğunluğu dışındakinden fazlaysa, iyonlar difüzyonla dışarı gider ya da tersi olur. Pozitif yüklü K+ (potasyum) iyonunun yoğunluğu nöronun içinde dışına göre daha fazladır. Dolayısıyla membrana doğru difüzyon gerçekleşir.  Negatif iyonları (A- olarak adlandırılır.) membran tolere etmediği için nöron içinde kalır. Dolayısıyla nöronun içi negatif yüklü hale gelir.  Negatif iyonlar kaldıkça pozitif iyonlar azaldıkça hücrenin içi daha negatif olur. Bu da başka bir gradyana neden olur. 
+	Elektriksel gradyan: Konsantrasyon gradyanının tersidir. Hücre içi negatif yükü daha fazla olduğu için artık pozitif K iyonlarını çeker ve K iyonları içeri girmek ister.
+	Eğer bu gradyanlar serbest bırakılırsa denge sağlanır ve -85mV’luk membran potansiyeli oluşur. Ancak bizim -70mV’lik potansiyele ihtiyacımız var. 
+	Hücre zarının tolere etmediği başka önemli bir iyonda Na+ (soydum) dur. Ancak membrandan hücreye doğru akar ve hücrede soydum artar. 
+	Hücre içinde soydumun az olması, sodyumun pozitif yüklü ve hücrenin içinin negatif yüklü olması sodyumun içeri girmek istemesine sebep olur.
+	Soydum içeri girip içerdeki yoğunluk arttıkça, hücre içindeki negatif yoğunluk da gittikçe azalır, K iyonları daha az içeri girer. Bu noktada işin içine “pump” (ATP proteini) girer. İyonları gitmek istedikleri yere doğru taşır.
+	Sodyum hücre içine girmek istemesine rağmen hücre dışına pompalanır. 
+	Potasyum hücre dışına difüze olur ama aktif olarak hücreye pompalanır. 
+	Bu işleme sodyum potasyum pompalaması denir. 
+	Pompalama sodyum ve potasyum için konsantrasyon gradyanını korur. Böylece -70mV’lik dinlenme potansiyeli (resting) meydana gelir. 
+	Nöronlar membran potansiyelindeki değişimlerden dolayı aktifleşir.
+	Sodyum ve potasyum membrandan geçebilir. Sodyum daha hızlı geçer. Potasyum daha yavaş geçer. Bunlar sodyum potasyum kanallarından geçerler. 
+	Sürekli açık olan kanallar vardır. Bunlar difüzyondan sorumludur. Sodyum potasyum pompasıyla dengelenirler. Aynı zamanda kapalı ama gerektiğinde açılan kanallar da vardır. Bu kanallar membran içindeki ve dışındaki iyon yoğunluklarını değiştirdikleri için aynı zamanda membran potansiyelini de değiştirmiş olurlar. Bu kanallar yeterince uyarı geldiğinde, belli bir eşik değeri aşıldığında açılırlar. Eşik değer yaklaşık -55mV’dir. Bu eşik değeri aşılır aşılmaz nöronlar aktifleşir ve aksiyon potansiyeli denilen elektriksel sinyal başlar. Bu sinyal bağlı/dinleyen nöronlara iletilir. 
+	Aksiyon potansiyelinin çeşitli aşamaları vardır: Dinlenme aşaması (Resting state), Eşik Değerine Kadar Uyarım, Depolarizasyon, Repolarizasyon, Hiperpolarizasyon. Şekilsel olarak aşağıda gösterilmiştir.
+
+ 
+	Dinlenme durumu: Sadece sürekli açık olan sodyum potasyum kanalları geçirgendir. Membran potansiyeli -70mV’dir ve nöronlar aktif olarak bu değerde tutar. 
+	Eşik Değerine Kadar Uyarım: Uyarı geldiğinde kanallar açılır ve sodyum içeri akar.  İç yük daha pozitif olur. Membran potansiyeli eşik değer olan -55mV’yi geçer geçmez aksiyon potansiyeli başlatılır ve daha fazla sodyum kanalı açılmaya başlar. 
+	Depolarizasyon: Sodyum girmeye devam eder. Çünkü içerdeki yoğunluk dışardakinden azdır. Aynı zamanda hücre baskın olarak negatif olduğu için pozitif sodyum iyonlarını çeker. Sodyumun yoğun bir şekilde akışı membran potansiyelini 30mv’ye kadar yükseltir. Bu da elektiriksel titreşim yani aksiyon potansiyelidir.
+	Repolarizasyon: Sodyum kanalları artık kapalıdır. Potasyum kanalları açılır. Pozitif yüklü iyonlar hücre dışına çıkmaz ister. İç yoğunluk dış yoğunluktan fazladır. Dolayısıyla iyonların dışarı çıkışı hızlanır. Artık hücre içi dışına göre daha fazla negatif iyon içerir.
+	Hiperpolarizasyon: Sodyum ve potasyum kanalları kapalıdır. Başlangıçta membran potansiyeli dinlenme durumundaki potansiyelden biraz daha negatiftir. Bunun sebebi potasyum kanallarının daha yavaş kapanmasıdır. Dolayısıyla pozitif yüklü potasyum dışarı yayılır. Çünkü dışardaki yoğunluğu daha azdır. 1-2ms’lik refaktör dönemden sonra tekrar dinlenme durumuna geçilir. Böylece nöron yeni uyarıları alabilecek hale gelir. Refaktör dönem nöronun yenilenmesi için gerekli bir dönemdir. Bu dönem ne kadar kısaysa nöron daha çok ateşlenir. Daha sonra elde edilen uyarı akson tarafından gerekli yerlere iletilir.
+	Aksonlarda titreşimler sıçramalı bir yolla yürütülür.
+	Aksonlar somadan dallanan uzantılardır. Üzerleri miyelin kılıfla (şıvan hücrleri ve oligodentrositten oluşur) kaplıdır. Miyelin kılıf aksonu elektriksel aktiviteden izole olmasını sağlar. Hücreler arasında 0.1-2mm uzunluğunda ranvier boğumu/düğümü denen boşluklar vardır. İzolasyonun başladığı ve bittiği yerlerde yer alır.
+	Aksiyon potansiyeli akson boyunca kesintisiz bir şekilde iletilmez. Düğümden düğüme atlar. Depolarizasyon ranvier düğümlerinden ilerler. Bir aksiyon potansiyeli diğerini tetikler. Aynı anda birçok düğüm aktiftir. Titreşimlerin düğümden düğüme zıplamasından sorumlu iletken sıçramalı iletken (saltatory conductor) olarak adlandırılır.
+	Sensör hücreleri modifiye edilmiş nöronlardır. Dentritler aracılığı ile elektriksel sinyalleri almazlar ancak bir uyarı geldiğinde iyon kanalları açılır ve aksiyon potansiyeli oluşur. Uyarı enerjisini membran potansiyeline dönüştürme sürecine duyusal aktarım denir. 
+	Bilgi sadece beyinde değil sinir sisteminin her düzeyinde işlenir. Reseptör hücrelerine gelen bilgi doğrudan işlenir.
+	Yuvarlak solucanların sinir sistemleri 302 nörondan oluşur.
+	Karıncada 104 nöron vardır.
+	105 nöronla bir sineğin sinir sistemi inşa edilebilir.
+	Bal arısında 0.8*106 nöron var.
+	Farede 4*106 nöron var.
+	Sıçanda 1.5*107 nöron var.
+	Yarasada 5*107 nöron var.
+	Köpekte 1.6*108 nöron var.
+	Kedide 3*108 nöron var.
+	Şempanzede 6*109 nöron var.
+	Yapay sinir ağları biyolojinin karikatürize edilmiş halidir.
+	Biyolojik nöronlar ağırlıklandırılmış bir şekilde birbirine bağlıdır ve uyarıldığında sinyallerini akson yoluyla elektriksel olarak iletirler. Aksondan doğrudan sonraki nöronlara aktarılmazlar, ancak önce sinyalin değişken kimyasal işlemlerle değiştirildiği sinaptik yarığı geçmeleri gerekir. Alıcı nöronda, sinaptik yarıkta sonradan işlenen çeşitli girdiler özetlenir veya tek bir titreşimde/darpede toplanır. Nöronun birikmiş girdi tarafından nasıl uyarıldığına bağlı olarak, nöronun kendisi bir darbe yayar ya da yaymaz-bu nedenle, çıktı doğrusal değildir ve birikmiş girdiyle orantılı değildir.
+	Vektörel Girdi: Teknik nöronların girdisi birçok bileşenden oluşur. Dolayısıyla bir vektördür. 
+	Skalar/Sayısal Çıktı: Nöronun çıktısı sayısaldır. Çıktılar başka nöronların girdisidir. 
+	Sinapsler girdiyi değiştirirler: Teknik olan nöral ağlarda da girdi önceden işlenmiştir. Bir sayıyıyla/ağırlıkla çarpılırlar. Yani ağırlıklandırılırlar. Bu tür ağırlıklar seti hem biyolojik hem de teknik uyarlamada bir sinir ağının bilgi depolamasını temsil ederler.
+	Girdilerin toplanması/akümüle edilmesi: Biyolojide girdiler kimyasal bir değişimle bir titreşim/darbe olarak özetlenirler. Teknik tarafta bu ağırlıklandırılmış toplamaya denk gelir. Toplama sonrası tek bir değerle devam edilir.
+	Doğrusal olmayan karakteristikler: Teknik nöronların girdileri de çıktıyla doğru orantılı değildir.
+	Ayarlanabilir ağırlıklar: Sinaptik yarıktaki kimyasal süreçlerde olduğu gibi girişi ağırlıklandıran ağırlıklar değişkendir. Bu yapı sinir ağına bir dinamiklik katar. Çünkü sinir ağındaki bilginin büyük bir kısmı ağırlıklarda saklanır. 
+	∑_i^ ▒〖w  ¦i*x  ¦i〗   Basit bir nöron yandaki formülde olduğu gibi x  ¦i bileşenlerinden oluşan vektörel bir girdi alır. Bu girdi uygun ağırlıklarla ( w  ¦i ) çarpılır ve toplanır. Buna ağırlıklı toplam denir. Doğrusal olmayan bir f fonksiyonu da y=f (∑_i^ ▒〖w  ¦i*x  ¦i〗) çıkışı sayısal bir değere dönüştürür.
+Bölüm-3: Yapay Sinir Ağlarının Bileşenleri
+
+	Teknik bir yapay sinir ağı nöron adı verilen basit işlemci birimlerinden ve bu nöronların aralarındaki yönlü, ağırlıklı bağlantılardan oluşur. i ve j nöronlarının arasındaki bağlantının gücü/ağırlığı  wij olarak gösterilir. Bir sinir ağı w fonksiyonu, N, V isimli iki kümeden oluşan sıralı bir üçlüdür (N, V, w). N nöron kümesidir. V ise elamanları nöron i ve nöron j arasındaki bağlantılar olan bir kümedir. w fonksiyonu ağırlıkları tanımlar. w(i,j)/ wij nöron i ve nöron j arasındaki bağlantının ağırlığını ifade eder.
+	Ağırlıklar W isimli kare ağırlık matrisi olarak tanımlanabilir. Ya da satır numarasının bağlantının nerde başladığını, sütun numarasının da hangi nöronun hedef olduğunu gösterdiği W ağırlık vektörü olarak tanımlanabilir. Bu matris gösterimine Hinton diyagramı denir. Nöronlar ve bağlantıları aşağıdaki bileşenler ve değişkenlerden oluşur.
+ 
+Bir nöronun veriyi işleyişi. Aktivasyon fonksiyonu eşik değeri belirler
+	Veri nöronlar arasında bağlantılar aracılığı ile taşınır. Bağlantılı ağırlıklar ya uyarıcı ya da engelleyici rolü oynar. 
+	Yayılım fonksiyonu vektör girdileri skalar ağ girdilerine dönüştürür. Diğer nöronların çıkışlarını alır, bağlantılı ağırlıkları da dikkate alarak bunları aktivasyon fonksiyonu tarafından işlenecek net bir ağ girdisine dönüştürür. En popüler yöntem ağırlıklı toplamdır.
+	Nöronların vereceği reaksiyon aktivasyon durumuna bağlıdır. Aktivasyon durumu ya da aktivasyon nöronun aktivasyonunun derecesine bağlıdır. 
+	Nöronlar ağ girdisi belli bir eşik değerinin üzerinde olduğunda aktifleşirler.
+	Aktivasyon fonksiyonu ağ girdisine ve eşik değerine bağlı olarak nöronun aktivasyonunu belirler.
+	Ağ girdisi netj ve bir önceki aktivasyon durumunu aj(t-1) yeni bir aktivasyon durumuna aj(t) dönüştürür. Burada eşik değer Θ önemli bir rol oynar. 
+	Aktivasyonun denklem olarak ifadesi aj (t) = fact (netj (t), aj (t − 1), Θj )
+	Aktivasyon fonksiyonu tüm nöronlar için ya da en azından bir nöron kümesi için global olarak tanımlanır. Ancak her nöronun eşik değeri farklıdır. Eşik değerler de bir öğrenme prosedürü ile değişebilir. Dolayısıyla eşik değerini de zamana bağlı şekilde ifade etmek gerekebilir. Θj(t) gibi.
+	Aktivasyon fonksiyonuna transfer fonksiyonu da denir.
+	En basit aktivasyon fonksiyonu Heaviside step function olarak da bilinen binary threshold fonksiyonudur. Girdi bellir bir eşik değerinin üstündeyse fonksiyon bir değerden diğer değere dönüşür. Değilse sabit kalır.  Diğer bir ifadeyle fonksiyon eşik değerde türevlenebilir değildir ve türevi sıfırdır.  Bu nedenle geri yayılım ile öğrenme mümkün değildir. 
+	Diğer popüler fonksiyon Fermi function/logistic function 1/(1+e^(-x) )
+	Fermi değerleri (0,1) arasına eşler. Hyperbolic tanget ise (-1,1) arasına eşler. İkisi de türevi alınabilirdir. Fermi fonksiyonu T sıcaklık parametresi ile genişletilebilir. 1/(1+e^(-x/T) )
+	T ne kadar küçükse fonksiyonu x ekseninde o kadar sıkıştırır. 
+ 
+Çeşitli aktivasyon fonksiyonları
+	Öğrenme stratejileri ihtiyaçlarımıza cevap vermek için bir ağı ayarlar. Bir algoritmadır. Ağı eğitmek için kullanılır ve ağın istenen girdiye istenen cevabı vermesini sağlar.
+	Ağ topolojileri=ağ tasarımları 
+	İleri beslemeli ağlar (feedforward) katmanlardan ve katmanlar arası bağlantılardan oluşur. 1 giriş katmanı, n gizli katman (dışardan görülemez) ve 1 çıkış katmanından oluşur. Bir katmandaki her nöron sadece bir sonraki katmandaki nöronlara doğrudan bağlantısı vardır. 
+ 
+3 katmandan oluşan ileri beslemeli bir ağ ve hinton diyagramı ile gösterimi
+
+	Bazı ileri beslemeli ağlar kısayol bağlantılarına izin verir. Bu bağlantılar bir iki katmanı pas geçebilir. Bu bağlantılar aynı zamanda sadece çıkışa da bağlı olabilir. 
+ 
+Kısayol bağlantılı ileri beslemeli ağ
+
+	Recurrence/yineleme bir nöronun kendisini herhangi bir şekilde veya bağlantıyla kendisini etkilemesi sürecidir.
+	Bazı ağlar nöronların kendilerine bağlanmasına izin verir. Buna doğrudan yineleme/direct recurrence denir. Bu sayede nöronlar aktivasyon limitlerine erişmek için kendilerini güçlendirirler. 
+ 
+Doğrudan yineleme
+	Giriş katmanına bağlantılara izin verilirse buna dolaylı yineleme/indirect recurrence denir. Bir nöron bu dolaylı bağlantıları kullanarak kendini etkileyebilir. 
+ 
+Dolaylı yineleme. Dolaylı bağlantılar koyu çizgilerle ifade edilmiş
+	Lateral recurrence/yinelemede nöronlar kendi katmanlarında bağlantılıdırlar. Her nöron diğer katmandaki nöronları engellerler ve kendilerini güçlendirirler. Sonuçta en güçlü nöron aktif olur (winner takes all).
+ 
+Lateral yineleme
+	Tam bağlantılı ağlar/completely linked networks doğrudan yineleme dışında tüm nöronlar arasında bağlantıya izin verir. Bağlantılar simetrik olmalıdır. En popüler örneği özdüzenleyici haritalar/self organizing maps
+ 
+Tam bağlantılı ağ örneği
+	Nöronlar için eşik değerleri sürekli ateşlenen bir nöronun bağlantı ağırlığı olarak uygulanabilir. Bu amaçla çıkışı her zaman 1 olan ek bir bias nöronu ağa entegre edilir ve nöronlara bağlanır. Yeni bağlantılar negatif eşik değerler alırlar. 
+	Bias nöron/yanlılık nöronu çıkış değeri her zaman 1’e eşit olan bir nörondur. Nöron biaslarının bağlantı ağırlıkları olarak ifade edilmesi için kullanılır. Bu da ağırlık eğitim algoritmalarının aynı zamanda biasları da eğitmelerini sağlar. Daha sonra nöronların eşik değerleri sıfıra eşitlenir. Artık eşik değerleri bağlantı ağırlıkları olarak uygulanır ve bağlantı ağırlıklarıyla birlikte doğrudan eğitilebilir. Bu da öğrenme sürecini kolaylaştırır.
+	Başka bir deyişle aktivasyon fonksiyonuna eşik değerini dahil etmek yerine yayılım fonksiyonuna dahil etmiş oluruz. Kısaca eşik değeri ağ girdisinden çıkarılmış olur. 
+	Bias değeri eklemek ile aslında daha iyi tahmin yapmış oluruz. Fonksiyon bazlı düşündüğümüzde y=mx gibi bir fonksiyon her zaman orijinden geçecektir. Ancak gerçek hayatta bu durum her zaman böyle değildir. y=mx+b  gibi bir bias eklenmiş bir fonksiyona dönüştürdüğümüzde artık eksenler üzerinde istediğimiz yere kaydırabiliriz. Daha iyi tahminler yapmış oluruz. 
+	Nöronlar isimleriyle yazılabileceği gibi aldıkları eşik değer ile de yazılabilir. Ek olarak aşağıdaki şekilde olduğu gibi veri işleme türlerine göre de ifade edilebilir.  
+ 
+Veri işleme türüne göre nöronların ifade edilmesi
+	Bir sinir ağında bireysel olarak nöronların girdileri hangi sırada aldığı ve hangi sırada işlediği ve çıktı sağladığı önemlidir. Bu noktada 2 model vardır.
+	Senkron aktivasyon: Tüm nöronlar değerlerini senkron bir şekilde değiştirir. Ağ girdileri, aktivasyonlar, çıkış aynı anda hesaplanır. Biyolojiye en yakındır. Donanımsal olarak paralel bilgisayarla yapılmasının anlamı vardır. İleri beslemeli ağlar için uygun değildir.
+	Asenkron aktivasyon: Nöronlar değerlerini aynı anda değiştirmezler.  Bu değişimler rastgele sırada, rastgele permutasyonla ya da topolojik sırada olabilir.
+	Topolojik sırada aktivasyon: Nöronlar bir 1 devrede/dolaşımda sabit sırada güncellenir. Sıra ağ topolojisi tarafından belirlenir. Bu prosedür sadece döngüsel olmayan, yayılımsız ağlar için geçerlidir. Dolayısıyla ileri beslemeli ağlarda önce giriş nöronları, sonra içteki nöronlar ve son olarak da çıkış nöronları güncellenir.
+Bölüm 4: Öğrenme ve Eğitim Örnekleriyle İlgili Temel Bilgiler
+
+	Sinir ağlarının en ilginç karakteristiği eğitim yoluyla (yeterli eğitimle) bazı problemlere aşina olabilme, aynı sınıftaki problemlere çözüm bulabilme kabiliyetleridir. Bu yönteme generalization/genelleme denir.
+	Bir yapay sinir ağı yeni bağlantılar geliştirerek, var olan bağlantıları silerek, bağlantı ağırlıklarını değiştirerek, nöronların eşik değerlerini değiştirerek, 3 fonksiyondan birini (yayılım, aktivasyon, çıkış fonksiyonları) ya da birkaçını çeşitlendirerek, yeni nöronlar üreterek ya da silerek öğrenebilir. 
+	Ağırlıkları değiştirerek öğrenme en yaygın olanıdır.
+	Nöron fonksiyonlarını değiştirmek zor uygulanabilir bir yöntemdir. Biyolojiye de uzaktır. 
+	Yeni nöronlar üretmek ya da silmek iyi ayarlanmış ağırlıklar sağlar. Aynı zamanda ağ topolojisini de optimize eder. Bu yönteme artan bir ilgi vardır ve genelde evrimsel yöntemlerle (evolutionary) gerçekleştirilir.
+	Sinir ağlarımızın algoritmik düzeyde ifade edebileceğimiz, bağlantı ağırlıklarının bazı kurallara göre değiştirildiği şekilde öğrenmesini sağlayabiliriz. Dolayısıyla öğrenme prosedürü herhangi bir programlama diliyle kodlanabilen bir algoritmadır. 
+	Training set (Eğitim seti): P ile tanımlayacağımız sinir ağımızı eğitmede kullanacağımız eğitim desenleridir.
+	Öğrenme çeşitleri: Denetimsiz (unsupervised) öğrenme, denetimli (supervised) öğrenme, pekiştirmeli (reinforcement) öğrenme
+	Denetimsiz öğrenme: Biyolojik olarak akla en yatkın yöntemdir. Ancak tüm problemlere uygun değildir. Sadece giriş desenleri verilir. Ağ benzer desenleri tanımlamaya çalışır ve benzer kategorilerde sınıflandırmaya çalışır. Eğitim seti sadece giriş desenlerini içerir. Ağ kendi kendine benzerlikleri bulmaya çalışır ve desen sınıfları oluşturur.
+	Pekiştirmeli öğrenme: Ağ belli bir sekansı gerçekleştirdiğinde sonucun doğru ya da yanlış olduğunu tanımlayan mantıksal ya da gerçek bir değer alır. Denetimsiz öğrenmeden daha etkilidir çünkü ağ bir problemi çözmek için belirli bir kriter alır. Eğitim seti giriş desenlerini içerir. Sonucun doğru ya da yanlış olduğunu (ya da ne kadar doğru ya da yanlış olduğunu) gösteren bir değer sekans bittikten sonra ağa döndürülür. 
+	Denetimli öğrenme: Eğitim seti hem giriş desenlerini hem de çıkışların aktivasyonunu gerçekleştirecek formda doğru sonuçları içerir. Ağa beslenen her eğitim seti için çıkış doğrudan doğruya çözümle karşılaştırılabilir. Ağ ağırlıkları ortaya çıkan farka göre değiştirilebilir. Amaç sadece ağırlıkları değiştirerek giriş ve çıkışları bağımsız bir şekilde ilişkilendirmek değil aynı zamanda bilinmeyen, benzer giriş desenlerine mantıklı sonuçlar sağlayabilmektir (genelleme). Eğitim seti giriş desenlerini ve doğru sonuçları içerir. Dolayısıyla ağ kesin bir hata vektörü döndürebilir. Biyolojik olarak mantıklı değil ancak etkili ve pratiği olan bir yöntemdir. Aşamalarını şöyle özetleyebiliriz: 
+	Giriş deseninin girilmesi (giriş nöronlarının aktivasyonu)
+	Ağ tarafından girişin ileri yayılması ve sonuçların üretilmesi
+	Çıkışın beklenen çıkışla (eğitim girdisi) karşılaştırılması ve hata/fark vektörünün üretilmesi
+	Hata vektörüne göre ağın düzeltilmesi
+	Düzeltmelerin uygulanması
+	Öğrenme offline ve online olabilmektedir. Offline: Bir eğitim örneği kümesi sunulur, sonra ağırlıklar değiştirilir, bir hata fonksiyonu aracılığıyla toplam hata hesaplanır, hatalar akümüle edilir.  Batch training adı da verilir. Tüm eğitim örneklerinden bir kısım eğitim örneklerinin ilgili değişimleriyle birlikte alınmasına epoch denir. Online: Her örneğin sunulmasından sonra ağırlıklar değiştirilir.
+	Konuyu öğrenmeden önce sorulması gereken sorular:
+	Öğrenme girdisi nereden gelir ve hangi formda olmalıdır?
+	Hızlı ve güvenilir bir öğrenme için ağırlıklar nasıl değiştirilmelidir?
+	Öğrenme sürecinin başarısı nesnel bir şekilde nasıl ölçülür?
+	En iyi öğrenme prosedürünü tanımlamak mümkün mü?
+	Öğrenme prosedürü sona erdiğinde sınırlı bir zaman sonra optimal bir duruma erişip erişemeyeceğini kestirmek mümkün mü?
+	Öğrenilen desenler ağda nasıl saklanır?
+	Yeni öğrenilen desenlerin daha önce öğrenilmiş ilişkileri yok etmesinden kaçınmak mümkün mü?
+	Eğitim deseni: Beklenen çıkışın bilindiği bir “p” girdi vektörüdür. Eğitim girdisini ağa vererek eğitim girdisiyle (beklenen çıkış) karşılaştırabileceğimiz bir çıkış elde ederiz.  Eğitim seti kümesine “P” denir. Beklenen çıkışla birlikte eğitim deseninin sınırlı sayıda eğitim(p,t) sıralı çiftlerini içerir. 
+	Öğretim girdisi: j bir çıkış nöronu olsun. Öğretim girdisi tj j nöronunun belirli eğitim desenleri girildikten sonra çıkış olarak üretmesi gereken beklenen ve doğru değerdir. t de p gibi vektör şeklinde ifade edilebilir. t P içinde yer alan belli bir “p” eğitim desenine karşılık gelir.
+	Hata vektörü: Eğitim girdisi p uygulandığında çıkış vektörü ile öğretim girdisi arasındaki farktır. Fark vektörü olarak da adlandırılır.
+	Öğrenme gerçekleştikten sonra ağın “sadece ezber yaptığı” kontrol edilmelidir. Yani eğitim setini kullanarak doğru çıktı üretiyor ancak aynı sınıfın tüm diğer problemleri için yanlış cevaplar üretiyor.
+	Diyelim ki aşağıdaki eğitim örneklerini kullanarak bir ağ eğiteceğiz. Ağın, 1 çıkışlı eğitim setlerinin tam olarak etrafındaki yerleri işaretlemesi mümkündür (sol üst).  Dolayısıyla 1 çıkışlı 6 eğitim örneğine konsantre olacak yeterli depolama kapasitesi vardır. Bu da çok fazla boş depolama kapasitesinin olduğu çok büyük bir ağ demektir. Diğer bir tarafta (en alt) ağın yeterli depolama kapasitesi olmayabilir ve iyi bir genelleme performansı yakalayamaz. Dolayısıyla sağ üstteki gibi bir denge bulmamız gerekir.
+ 
+Yüksek (sol üst), doğru (sağ üst) ve yanlış (alt) kapasitede bir ağda aynı eğitim setinin eğitim sonuçlarının görselleştirilmesi
+
+	Önerilen çözüm eğitim setini bölmektir. Bir eğitim seti sadece eğitim için diğeri de ilerleyişimizi doğrulamak (verification) için kullanılır. Genel olarak %70 eğitim verisi, %30 doğrulama verisi (rastgele seçilmiş) olarak kullanılır. Ağın eğitimini hem eğitim setinde hem doğrulama setinde iyi bir performans yakaladığımızda bitirebiliriz.
+	Eğer doğrulama verisi kötü sonuçlar üretirse, veri doğru sonuçlar üretene kadar ağın yapısı değiştirilmemelidir. Bu da demektir ki veri doğrudan eğitim setinde olmasa da eğitimde kullanılmıştır. Bunu önlemek için 3. bir onaylama verisi kullanılır. Sadece başarılı bir eğitim sonrasında onaylama amacıyla kullanılır.
+	Öğrenme eğrisi hatanın durumunu, ağda bir ilerleme olup olmadığını gösterir. O nedenle normalize edilmelidir. Ağın o anki çıkışıyla gerçek doğru arasındaki mesafeyi ölçer.
+	Ω çıkış nöronu olsun. “O” çıkış nöron kümesi olsun. Errp= 1/2 ∑_ΩO^ ▒〖(t_Ω-y_Ω)〗^2  belirli bir hatanın denklemini ifade eder. 
+	 Karelerin ortalamasının karakökü (root mean square, RMS) veya öklüd mesafesi de hata denklemi için kullanılır. Genelde RMS kullanılır. Öklid mesafesi: √(∑_ΩO^ ▒〖(t_Ω-y_Ω)〗^2 ) RMS: √((∑_ΩO^ ▒〖(t_Ω-y_Ω)〗^2 )/(|O|))
+	 Hata hesaplama yöntemine göre öğrenme eğrisi de değişir. Mükemmel bir öğrenme eğrisi negatif eksponansiyel bir fonksiyona benzer. e-t ile doğru orantılıdır. Sağ alttaki figür logaritmik ölçeği gösteriyor.
+
+ 
+				Aynı öğrenme eğrisini gösteren 4 figür.
+	Eğitimi ne zaman durdurmalıyız? Genelde bilgisayarın başında oturan kişi hatanın çok küçük olduğunu düşündüğünde eğitim durur. Daha nesnel olarak sonuçlardaki güvene bakabiliriz. Örnek: Güçlendirilmiş (boosted): Rastgele başlatmalarda ağ her zaman aynı son hataya ulaşıyorsa tekrarlı başlatmalar ve eğitim daha nesnel sonuçlar üretecektir.
+	Başlangıçta hızlıca azalan bir eğri uzun süren bir öğrenme sonrasında başka bir eğri tarafından bastırılabilir. Bu şunu ifade eder. Ya en kötü eğrinin öğrenme oranı yüksektir ya da en kötü eğrinin kendisi lokal minimuma takılmıştır. Büyük hata değerleri her zaman küçük olanlardan daha kötüdür. 
+	Çoğu kişi eğitim verisine göre öğrenme eğrisi oluşturur. Daha nesnel bir değerlendirme için doğrulama verisi için ayrı bir öğrenme eğrisi oluşturmak daha iyi olacaktır.  Bu eğri daha güçlü salınımları olan ve daha kötü değerler üreten bir eğridir. 
+	Ağ örnekleri ezberlemeye başladığında öğrenme eğrisinin şekli bir şeyler ifade etmeye çalışır. Eğitim örneklerinin öğrenme eğrisi aniden ve hızlı bir şekilde yükseliyorsa ve diğer tarafta doğrulama verilerinin eğrisi sürekli düşüyorsa ezberleme vardır ve ağın genelleme yeteneği gittikçe zayıflıyordur. Bu noktada, iki eğrinin diğer noktalarında ağın zaten yeterli derecede öğrendiğine karar verilebilir ve son bir öğrenme noktası uygulanabilir. Buna erken durma (early stopping) denir.
+	Gradyan Optimizasyon Prosedürü (Gradient Descent): Genelde n boyutlu fonksiyonları minimize ya da maksimize etmede kullanılır. Gradyan, bir fonksiyonun türevlenebilir herhangi bir noktası için tanımlanan, bu noktadan tam olarak en dik yükselişe işaret eden ve normali|g| aracılığıyla bu yöndeki gradyanı gösteren bir g vektörüdür. Bu nedenle, gradyan, çok boyutlu fonksiyonlar için türevin bir genellemesidir. Negatif gradyan −g tam olarak en dik inişi işaret eder.
+ 
+Gradient Descent’in iki boyutlu hata fonksiyonu üzerinde görselleştirilmesi
+	∇ işareti gradyan öperatörüdür. Nabla operatör olarak da bilinir. 
+	İki boyutlu bir fonksiyonun (x,y) ile tanımlanan noktasının gradyan g’si şöyle ifade edilir: g(x, y) = ∇f (x, y). 
+	Gradyan inişi, fonksiyonumuzun herhangi bir başlangıç noktasından gradyan g'ye doğru küçük adımlarla yokuş aşağı inmek anlamına gelir (bir topun başlangıç noktasından yuvarlanacağı yön anlamına gelir), adımların boyutu ile orantılıdır. |g| (iniş ne kadar dik olursa, adımlar o kadar uzun olur). Bu nedenle düz bir platoda yavaş ilerleriz ve dik bir yokuşta hızla yokuş aşağı koşarız.
+	Gradyan iniş prosedürleri hiç hatasız bir optimizasyon prosedürü değildir. Ancak yine de birçok problemde iyi çalışırlar, bu da onları sıklıkla kullanılan bir optimizasyon paradigması haline getirir.
+	Her gradyan inişi prosedürü, örneğin, yerel bir minimum içinde sıkışabilir. Bu sorun, hata yüzeyinin boyutuyla orantılı olarak artmaktadır ve evrensel bir çözüm yoktur. Gerçekte, optimal minimuma ulaşılıp ulaşılmadığı bilinemez ve kabul edilebilir bir minimum bulunursa bir eğitimin başarılı olduğu düşünülür.
+ 
+Gradyan iniş boyunca muhtemel hatalar. a) Kötü minimum bulunması b) küçük gradyanlı yarı duraklama c) kanyonda salınımlar d) iyi bir minimum bırakma
+	Hebbian öğrenme kuralı diğer tüm öğrenme kurallarının temelini oluşturur.
+	Hebbian Kuralı: j nöronu, i nöronundan bir girdi alıyorsa ve her iki nöron da aynı anda güçlü bir şekilde aktifse, o zaman wi,j ağırlığını arttır. ∆wi,j ∼ ηoiaj şeklinde ifade edilir. ∆wi,j i’den j’ye giden ağırlıktaki değişimi gösterir. η sabit bir öğrenme oranını temsil eder. oi öncül nöron i’nin çıkışı, aj ardıl nöron j’nin aktivasyonu.
+	Hebbian Kuralı'nın genelleştirilmiş biçimi, yalnızca ağırlıktaki değişimin iki tanımsız fonksiyonun çarpımına orantılılığını belirtir, ancak tanımlı girdi değerleriyle. ∆wi,j =η·h(oi,wi,j)·g(aj,tj)
+Bölüm 5: Perceptron (Algılayıcı), Backpropagation (Geri Yayılım) ve Varyantları
+	Algılayıcılar sabit giriş çıkış katmanları olan, yineleme içermeyen çok katmanlı ağlardır. Giriş nöronlarının sabit ağırlıklı bağlantıları vardır. Ardından en az bir adet eğitilebilir ağırlık katmanı içerir. Bir nöron katmanı izleyen nöron katmanıyla tamamen bağlıdır.
+	Algılayıcılar basit mantıksal bileşenler olarak kullanılabilir. Herhangi bir boolean fonksiyon algılayıcı düzeyinde seri bağlantılarla oluşturulabilir. 
+	Giriş nöronu: Identity nöronudur. Aldığı bilgiyi yönlendirir. Identity fonksiyonunu ifade eder (/ işareti ile gösterilir).          İşareti ile temsil edilir.
+	Bilgi işlem nöronu: Giriş bilgisini işler ama identity değildir. işaretiyle ifade edilir.
+	Binary nöron: Ağırlıklı toplamı yayılım fonksiyonu olarak kullanarak tüm girişleri toplar. Σ işaretiyle temsil edilir. Nöronun aktivasyon fonksiyonu da binary threshold fonksiyonudur.            İşaretiyle ifade edilir.
+	Ağırlıklı ortalamayı yayılım fonksiyonu olarak, aktivasyon fonkisyonu olarak da hiperbolik tanjan, fermi fonksiyonu ya da farklı tanımlanmış bir aktivasyon fonkisyonu kullanan diğer nöronlar da şu şekilde gösterilir.
+ 
+	Tek katmanlı bir algılayıcı eğitilebilir ağırlıklı tek bir katmana, bir de çıkış katmanına sahiptir. 
+ 
+2 giriş nöronlu, bir çıkış nöronlu tek katmanlı algılayıcı
+
+	AND ve OR gibi boolean işlemler algılayıcıların en basit örnekleridir. 
+ 
+Yukarıdaki AND, aşağıdaki OR
+
+	Algılayıcı öğrenme algoritması ve yakınsama teoremi: Binary nöron aktivasyon fonksiyonlu algoritma aşağıda verilmiştir. Sonlu bir zamanda yakınsar. Sonlu bir zamanda algılayıcı herhangi bir şeyi öğrenebilir.
+ 
+
+	Gradient Descent, Delta Kuralı Matematiksel Denklemler: https://www.youtube.com/watch?v=ktGm0WCoQOg
+	SLP ve AND, OR, XOR için uygulanması: https://www.youtube.com/watch?v=s7nRWh_3BtA
+	Çok katmanlı Algılayıcı (MLP): Değişken ağırlıklı bağlantıları olan 1’den fazla katmanlı algılayıcılardır. SLP düz bir çizgi ile ifade edilirken, 2 eğitilebilir ağırlık katmanına sahip MLP birden fazla düz çizginin birleşimiyle bir poligonu temsil edebilir. MLP evrensel fonksiyon tahmincisi olarak da bilinir. 
+	Öğrenme oranı seçiminin öğrenme sürecinde büyük etkisi vardır.
+	Ağırlıktaki değişim ve öğrenme hızı öğrenme oranıyla doğru orantılıdır.
+	Öğrenme oranı çok büyükse hata yüzeyindeki atlamalar da çok büyüktür. Küçük bir oran arzu edilendir ancak çok fazla zaman alabilir. En iyi öğrenme oranı: 0.01 ≤ η ≤ 0.9.
+	Peki nasıl başlanmalı. Popüler yaklaşım büyük oranla (0.9 gibi) başlayıp zamanla 0.1’e doğru düşürmektir. Basit problemler için η sabit kalabilir.
+	Giriş katmanlarına yakın ağırlık katmanları için öğrenme oranının, çıkış katmanlarına yakın ağırlık katmanlarından daha büyük seçilmesi iyidir.
+	Eğer problemimiz lineer olarak ayrılabilir değilse en az bir gizli katman gerekir. 
+	Tecrübeler gösteriyor ki en az 2 gizli nöron katmanı bir problemi çözmek için çok kullanışlıdır. Doğru katman sayısını belirlerken 1 katmanla, öğrenme gerçekleşmiyorsa 2 o da olmuyorsa daha fazla katmanla yola çıkılmalı. Ama artık bilgisayarlar çok geliştiği için birçok katman kullanılabilir (Deep learning). 
+	Aktivasyon fonksiyonunun seçimi de önemlidir. Girişteki aktivasyon fonksiyonu zaten identity fonksiyonudur. Bir işlem yapılmaz. Bilgi bir sonraki katmana aktarılır. Gizli katmanlarda ve çıkış katmanında aynı aktivasyon fonksiyonu kullanılır.
+	Fonksiyon tahmin görevi için gizli katmanlarda aktivasyon fonksiyonu olarak hiperbolik tanjant fonksiyonu kullanımı daha uygundur. Çıkış içinse lineer aktivasyon fonksiyonu kullanmak daha uygundur. 
+	Ağırlıklar küçük ve rastgele seçilmelidir. Mesela [−0.5; 0.5] aralığında ama 0 ya da 0’a çok yakın değerler içermemeli. 
+
+Bölüm 6: Radial Temel Fonksiyonları (Radial Basis Functions)
+
+	Çıkış Nöronları: Çıkış nöronları Identity’yi aktivasyon fonksiyonu olarak içerirler ve yayılım fonksiyonu olarak da ağırlıklı toplam kullanılır. Giriş değerlerini toplayıp toplamı döndürmekten fazla bir iş yapmazlar. 
+	Gizli Nöronlar: RBF nöronları olarak da adlandırılırlar. Yayılma fonksiyonu olarak, her gizli nöron, ağa giriş ile nöronun sözde konumu (merkez) arasındaki mesafeyi temsil eden bir norm hesaplar. Bu, nöronun aktivasyonunu hesaplayan ve çıktı olarak veren bir radyal aktivasyon fonksiyonuna eklenir.
+	RBF Nöron Merkezi: RBF nöronunun bulunduğu giriş alanında bir nokta. Girdi vektörü RBF nöron vektörünün merkezine ne kadar yakınsa aktivasyon o kadar güçlüdür.
+	RBF Nöron: Bu nöronun girdi vektörüyle nöronun merkezi arasındaki uzaklığı belirleyen bir yayılım fonksiyonu vardır. Uzaklık ağ girdisini tanımlar. Daha sonra ağ girdisi aktivasyonu ya da nöronun çıktısını döndüren bir radyal temelli fonksiyona gönderilir.  RBF nöronları   simgesiyle gösterilir. 
+	RBF Çıkış Nöronları: Yayılım fonksiyonu olarak ağırlıklı toplamı, aktivasyon fonkisyonu olarak da identity’yi kullanırlar.    sembolü ile gösterilirler.
+	RBF Ağı: Tam olarak 3 katmanı vardır. Giriş katmanı, RBF nöronlarını içeren gizli katman (RBF katmanı), RBF çıkış nöronları. Her katman tamamen bağlantıldır. Kısa devre yoktur. Giriş katmanı ve RBF katmanı arasındaki bağlantılar ağırlıksızdır. Sadece girdiyi aktarırlar. RBF katmanı ve çıkış katmanı arasındaki bağlantılar ağırlıklıdır. Bias nöronu yoktur.  
+ 
+
+2 giriş, 5 gizli nöron, 3 çıkış nöronuna sahip RBF Ağı.
+	RBF Network video: https://www.youtube.com/watch?v=1Cw45yNm6VA , https://www.youtube.com/watch?v=O8CfrnOPtLc
+
+Bölüm 7: Yinelemeli Algılayıcı Benzeri Ağlar
+
+	Yinelemeler yoluyla kendilerini etkileyen ağlardır. 
+
+Bölüm 8: Hopfield Ağları 
+
+	Hopfield ağları fikri, bir manyetik alandaki parçacıkların davranışından kaynaklanmaktadır: Her parçacık (manyetik kuvvetler aracılığıyla) diğer her parçacıkla (tamamen bağlantılı) "iletişim kurar" ve her parçacık enerjik olarak uygun bir duruma ulaşmaya çalışır.
+	Nöronlara gelince, bu durum aktivasyon olarak bilinir. Böylece, tüm parçacıklar veya nöronlar döner ve böylece birbirlerini bu dönüşü sürdürmeye teşvik eder. Sinir ağımız bir parçacık bulutudur.
+	Parçacıkların enerji fonksiyonunun minimumlarını otomatik olarak algıladıkları gerçeğine dayanarak, Hopfield parçacıkların "dönüşünü" bilgiyi işlemek için kullanma fikrine sahipti: Parçacıkların keyfi fonksiyonlarda minimumları aramasına neden izin vermiyorsunuz?
+ 
+Örnek bir Hopfield ağının çizimi. ↑ ve ↓ okları ikili "spin"i işaretler.
+
+	Bir Hopfield ağı, ağırlıkları tek tek nöronlar arasında simetrik olan ve herhangi bir nöronun kendisine doğrudan bağlı olmadığı, ikili aktivasyonlu (sadece iki spin kullandığımız için) tamamen bağlı nöronlardan oluşan bir küme K'den oluşur.
+	Nöronların aktivasyon fonksiyonu, çıkışları ∈ {1, -1} olan ikili eşik fonksiyonudur.
+	Ağın durumu, tüm nöronların aktivasyon durumlarından oluşur. Böylece, ağın durumu bir ikili dizi z ∈ {−1, 1}|K| olarak anlaşılabilir.
+	Bir Hopfield ağının girişi, ikili dize x ∈ {−1, 1}|K| bu, ağın durumunu başlatır. Ağın yakınsamasından sonra, çıktı y ∈ {−1, 1}|K| yeni ağ durumundan oluşturulur.
+
+
+Bölüm 9: Öğrenmeli Vektör Nicemleme (Learning Vector Quantization)
+
+	Nicemleme, sürekli bir uzayın ayrı bölümlere bölünmesi anlamına gelir: Örneğin, 2.71828 gerçek sayısının tüm ondalık basamaklarını silerek, doğal sayı 2'ye atanabilir. Virgülün önündeki doğal sayı 2'ye de atanacaktır, yani 2, aralık içindeki tüm gerçek sayıların bir tür temsilcisi olacaktır.
+	Özel bir nicemleme durumu sayısallaştırmadır: Sayısallaştırma durumunda, her zaman belirli bir temele göre bir sayı sistemine sürekli uzayın düzenli nicemlenmesinden bahsederiz. Örneğin bilgisayara bazı sayılar girersek, bu sayılar ikili sisteme sayısallaştırılacaktır.
+	LVQ'nun ne yapmamızı sağlaması gerektiğini ismiyle açıklamak neredeyse mümkündür: Bir girdi alanını mümkün olduğunca girdi alanını yansıtan sınıflara bölmek için bir dizi temsilci kullanılmalıdır. Bu nedenle, girdi uzayının her elemanı bir temsilci olarak bir vektöre, yani bu temsilciler kümesinin tüm girdi uzayını mümkün olduğu kadar kesin olarak temsil etmesi gereken bir sınıfa atanmalıdır. Böyle bir vektöre kod çizelgesi vektörü denir. Bir kod çizelgesi vektörü, tam olarak kendisine en yakın olan ve giriş alanını söz konusu ayrık alanlara bölen girdi uzay vektörlerinin temsilcisidir.
+	Kaç tane sınıfımız olduğunu ve hangi eğitim örneğinin hangi sınıfa ait olduğunu önceden bilmemiz gerektiği vurgulanmalıdır. Ayrıca, sınıfların ayrık olmaması önemlidir, yani çakışabilir.
+	Hazırlanmış bir kod kitabı vektörleri setinin kullanımı çok basittir: Bir y girdi vektörü için sınıf ilişkisine, hangi kod kitabı vektörünün en yakın olduğu göz önünde bulundurularak kolayca karar verilir – bu nedenle, kod kitabı vektörleri setten bir voronoi diyagramı oluşturur. Her kod kitabı vektörü açıkça bir sınıfla ilişkilendirilebildiğinden, her girdi vektörü de bir sınıfla ilişkilendirilir.
+
+Bölüm 10: Özdüzenleyici Haritalar
+
+	SOM’lar herhangi bir zamanda hangi çıkışın aktif olduğuyla ilgilenirler. Çıkışın şiddetininin önemi yoktur. Örneğin bir kasın ne kadar kasıldığının değil kasılıp kasılmadığının önemli olması gibi.
+	SOM’un çalıştığı iki alan vardır. Birincisi N boyutlu girdi alanıdır. İkincisi nöronların bulunduğu nöronların komşuluk ilişkilerinin tutulduğu (ağ topolojisi) G boyutlu grid alanı. 
+	SOM nöronu: RBF’de olduğu gibi SOM’da nöronlar girdi alanında sabit bir pozisyonda (merkez) yer işgal etmezler. 
+	SOM: Kendi kendini organize eden bir harita, bir dizi K SOM nöronudur. Bir giriş vektörü girilirse, tam olarak giriş uzayındaki giriş modeline en yakın olan k ∈ K nöronu etkinleştirilir. Girdi uzayının boyutu N olarak adlandırılır.
+	Topoloji: Nöronlar komşuluk ilişkileriyle birbirine bağlıdır. Bu komşuluk ilişkilerine topoloji denir. SOM’un eğitilmesi topolojisinden çok etkilenir.
+	Diğer sinir ağlarında olduğu gibi SOM’larda eğitilmelidir. Girişe hesaplanan en kısa mesafeye sahip nöron aktif hale gelir. Diğer tüm nöronlar devre dışı kalır. Bu etkinlik paradigması, kazanan her şeyi alır şeması olarak da adlandırılır. Bir SOM girdisinden beklediğimiz çıktı, hangi nöronun aktif hale geldiğini gösterir.
+	Genellikle bir SOM katmanına tamamen bağlı olan bir girdi katmanı tanımlanır. Daha sonra girdi katmanı (N nöron) tüm girdileri SOM katmanına iletir. SOM katmanı kendi içinde yanal olarak bağlantılıdır, böylece kazanan bir nöron kurulabilir ve diğer nöronları inhibe edebilir.
+	Eğitim: Ağ, girdi uzayından rastgele nöron merkezleri ile başlar. Girdi alanından bir uyarıcı (stimulus), yani bir p noktası seçilir. Bu uyaran ağa girilir. Daha sonra uzaklık ||p−ck|| ağdaki her nöron k için belirlenir. p'ye en küçük mesafeye sahip olan kazanan nöron i belirlenir. Nöron merkezleri, ∆ck değerinin merkezlere eklenmesini sağlayan bir kurala (∆ck =η(t)·h(i,k,t)·(p−ck)) göre giriş alanı içinde hareket ettirilir.
+	Topoloji fonksiyonu h, giriş uzayında değil, gridde tanımlanır ve nöronlar arasındaki komşuluk ilişkilerini, yani ağın topolojisini temsil eder.
+	Fonksiyon zamana bağlı olabilir (ki genellikle öyledir) – bu da t parametresini açıklar. k parametresi tüm nöronlardan geçen indekstir ve i parametresi kazanan nöronun indeksidir.
+ 
+1 (yukarı) ve 2 boyutlu SOM’da mesafeler
+
+	SOM'ler genellikle geçici olarak monoton olarak azalan öğrenme oranları ve mahalle boyutları ile çalışır. Öğrenme oranları 0.01 < η < 0.6
+	Azalan bir komşuluk boyutunun avantajı, başlangıçta hareketli bir nöronun çevresindeki birçok nöronu "çekmesi", yani rastgele başlatılan ağın başlangıçta hızlı ve düzgün bir şekilde açılabilmesidir. Öğrenme sürecinin sonunda, aynı anda sadece birkaç nöron etkilenir, bu da ağı bir bütün olarak güçlendirir, ancak bireysel nöronların iyi bir "ince ayarını" sağlar.
+
+
+
+
+
+
+
+Bölüm-11: Küme Analizi (Cluster Analysis)
+
+	K-means, düşük hesaplama ve depolama karmaşıklığı nedeniyle sıklıkla kullanılan ve "ucuz ve iyi" olarak kabul edilen bir algoritmadır. k-means kümeleme algoritmasının işlem sırası aşağıdaki gibidir:
+ 
+	Küme merkezlerinin k sayısı önceden belirlenmelidir. Bu algoritma tarafından yapılamaz. Sorun, k'nin en iyi nasıl belirlenebileceğinin önceden bilinmemesidir. Diğer bir problem ise, kod çizelgesi vektörleri kötü bir şekilde başlatılırsa prosedürün oldukça kararsız hale gelebilmesidir. Ancak bu rastgele olduğundan, prosedürü yeniden başlatmak genellikle yararlıdır. Bu, fazla hesaplama çabası gerektirmeme avantajına sahiptir.
+	Ancak, "kümelerdeki kümeler" gibi karmaşık yapılar tanınamaz. Eğer k yüksekse, aşağıdaki çizimdeki yapının dış halkası birçok tekli küme olarak tanınacaktır. Eğer k düşükse, küçük iç kümeleri olan halka bir küme olarak tanınır.
+ 
+	k-en yakın komşu prosedürü, her veri noktasını en yakın k komşuya bağlar, bu da genellikle grupların bölünmesiyle sonuçlanır. Sonra böyle bir grup bir küme oluşturur. Avantajı, küme sayısının kendi başına gerçekleşmesidir. Dezavantajı, bir sonraki komşuyu bulmak için büyük bir depolama ve hesaplama çabası gerektirmesidir (tüm veri noktaları arasındaki mesafeler hesaplanmalı ve saklanmalıdır). k çok yüksekse, prosedürün farklı kümelere ait veri noktalarını birleştirdiği bazı özel durumlar vardır. Ancak bu prosedür, açık bir avantaj olan halkaların ve dolayısıyla "kümelerdeki kümelerin" tanınmasına izin verir. Diğer bir avantaj, prosedürün kümeler içindeki ve arasındaki mesafelere uyarlanabilir bir şekilde yanıt vermesidir.
+	ε-en yakın komşu: Burada, komşuluk tespiti sabit sayıda k komşu değil, ε yarıçapı kullanır, bu da epsilon-en yakın komşu adının nedenidir. Noktalar birbirinden en fazla ε uzaktaysa komşudur. Burada, depolama ve hesaplama çabası açıkça çok yüksektir, bu da bir dezavantajdır.
+	Kümeleme problemlerinin kolay bir cevabı yoktur. Açıklanan her prosedürün çok özel dezavantajları vardır. Bu açıdan küme bölümlememizin ne kadar iyi olduğuna karar vermek için bir kriterin olmasında fayda var. Bu olasılık, siluet katsayısı tarafından sunulmaktadır. Bu katsayı, kümelerin birbirinden ne kadar iyi ayrıldığını ölçer ve noktaların yanlış kümelere atanıp atanamayacağını gösterir.
+	Siluet katsayısını hesaplamak için başlangıçta bir p noktası ile tüm küme komşuları arasındaki ortalama mesafeye ihtiyaç duyulur.

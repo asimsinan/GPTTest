@@ -7,6 +7,5 @@ __pycache__/
 *.pkl
 *.pt
 *.pyc
-input.txt
 env/
 venv/
